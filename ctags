@@ -1,0 +1,5 @@
+-R
+--exclude=.svn
+--exclude=.git
+--exclude=log
+--exclude=tmp

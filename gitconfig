@@ -1,0 +1,63 @@
+[user]
+	name = Marc Beyerlin
+	email = marc@beyerlin.net
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = 1
+
+[core]
+  # autocrlf = input
+  safecrlf = true
+	excludesfile = /Users/marcbey/.gitignore
+
+[merge]
+  tool = opendiff
+  summary=true
+
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  type = cat-file -t
+  dump = cat-file -p
+  b = branch -v
+  r = remote -v
+  t = tag -l
+  unstage = reset HEAD
+  uncommit = reset --soft HEAD^
+  mt = mergetool
+  
+  l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+  lol = log --pretty=oneline --abbrev-commit --graph --decorate
+
+  staged = diff --cached
+  unstaged = diff
+
+  current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
+
+  # Usage: git track origin/feature-123-login-form
+  track = checkout -t
+	ctags = !.git/hooks/ctags
+
+[gc]
+  auto=1
+
+[push]
+  # Only push branches that have been set up to track a remote branch.
+  default = current
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[init]
+	templatedir = ~/.git_template

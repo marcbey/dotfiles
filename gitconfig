@@ -13,6 +13,7 @@
   # autocrlf = input
   safecrlf = true
 	excludesfile = /Users/marcbey/.gitignore
+	editor = vim
 
 [merge]
   tool = opendiff

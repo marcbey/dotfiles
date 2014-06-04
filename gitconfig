@@ -1,6 +1,6 @@
 [user]
-	name = Marc Beyerlin
-	email = marc@beyerlin.net
+  name = Marc Schopper
+  email = marc@schopp3r.de
 
 [color]
   diff = auto
@@ -12,8 +12,9 @@
 [core]
   # autocrlf = input
   safecrlf = true
-	excludesfile = /Users/marcbey/.gitignore
-	editor = vim
+  excludesfile = /Users/marcbey/.gitignore
+  editor = vim
+  trustctime = false
 
 [merge]
   tool = opendiff
@@ -32,18 +33,17 @@
   unstage = reset HEAD
   uncommit = reset --soft HEAD^
   mt = mergetool
-  
+  rdiff = diff -R
+  cdiff = diff -R --cached
+
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
   lol = log --pretty=oneline --abbrev-commit --graph --decorate
-
-  staged = diff --cached
-  unstaged = diff
 
   current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
 
   # Usage: git track origin/feature-123-login-form
   track = checkout -t
-	ctags = !.git/hooks/ctags
+  ctags = !.git/hooks/ctags
 
 [gc]
   auto=1
@@ -53,12 +53,12 @@
   default = current
 
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 
 [init]
-	templatedir = ~/.git_template
+  templatedir = ~/.git_template
